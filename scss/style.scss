@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300&display=swap");
+
+$btn-color: #f96816;
+// ! for left and right
+.secondary-btn {
+  padding: 0.7rem 1rem;
+  height: 2.7rem;
+  width: 100%;
+  display: block;
+  border: 1px solid #f4f4f4;
+  border-radius: 2px;
+  font-weight: 500;
+  background: none;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    border-color: rgba(355, 24, 2, 0.3);
+    color: rgba(355, 24, 2, 0.3);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  background: #181818;
+  color: #fff;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+
+  //   ! left
+  #left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex: 1;
+    // ! sign in
+    #signin {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      padding-bottom: 1rem;
+      //   ! logo
+      .logo {
+        margin-bottom: 8vh;
+        img {
+          width: 300px;
+        }
+      }
+      //   ! form
+      form {
+        width: 80%;
+        padding-bottom: 3rem;
+
+        // ! label
+        label {
+          font-size: 0.9rem;
+          line-height: 2rem;
+          font-weight: 500;
+        }
+        .text-input {
+          margin-bottom: 1.3rem;
+          width: 100%;
+          border-radius: 2px;
+          background: #181818;
+          border: 1px solid #555;
+          color: #ccc;
+          padding: 0.5rem 1rem;
+          line-height: 1.3rem;
+        }
+        // ! btn
+        .primary-btn {
+          padding: 0.7rem 1rem;
+          height: 2.7rem;
+          width: 100%;
+          display: block;
+          border: 0;
+          border-radius: 2px;
+          font-weight: 500;
+          background: $btn-color;
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer;
+          text-align: center;
+          transition: all 0.5s ease-in-out;
+
+          &:hover {
+            background: rgba(355, 24, 2, 0.3);
+          }
+        }
+      }
+      //   !!
+      .secondary-btn,
+      .or,
+      .links {
+        width: 60%;
+      }
+
+      .links a {
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        display: block;
+        text-align: center;
+        font-size: 0.8rem;
+      }
+
+      //   ! or
+      .or {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1.2rem;
+        align-items: center;
+        .bar {
+          flex: auto;
+          border: none;
+          height: 1px;
+          background: #aaa;
+        }
+        span {
+          color: #ccc;
+          padding: 0 0.8rem;
+        }
+      }
+    }
+    // ! end of sign in
+    // TODO FOOTER
+
+    #main-footer {
+      color: #ccc;
+      text-align: center;
+      font-size: 0.7rem;
+      max-width: 80%;
+      padding-top: 2.5rem;
+      a {
+        color: #f96816;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // ! right
+  #right {
+    flex: 1;
+
+    // ! showcase
+    #showcase {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
+        url("/ash-blaze-bonfire-266436.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100%;
+      text-align: center;
+      h1 {
+        font-size: 1rem;
+        color: #fff;
+        width: 100%;
+        margin-bottom: 3rem;
+        strong {
+          color: #f96816;
+          text-decoration: underline;
+        }
+      }
+      //  !
+      .secondary-btn {
+        width: 100%;
+        margin: auto;
+      }
+    }
+  }
+}
+
+// TODO MEDIA QUERY
+
+@media (min-width: 1200px) {
+  #left {
+    flex: 4;
+  }
+
+  #right {
+    flex: 6;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+  #right {
+    display: none;
+  }
+
+  #left {
+    justify-content: start;
+    margin-bottom: 5vh;
+    margin-bottom: 4rem;
+
+    #signin .logo {
+      margin-bottom: 2vh;
+    }
+    #signin .text-input {
+      margin-bottom: 0.7rem;
+    }
+    #main-footer {
+      padding-top: 1rem;
+    }
+  }
+}
